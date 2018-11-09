@@ -1,0 +1,76 @@
+body {
+	background-color: #31313a; 
+}
+
+@media (min-width: 1024px) {
+	.header {
+		width:100%;
+		
+	}
+	.field {
+		margin: 100px auto;
+		width: 800px;
+		height: 800px;
+	}
+	.field__outsideLine {
+		display: inline-flex;
+		width: 760px;
+		height: 280px;
+		margin: 0 20px 0 20px;
+	}
+	.field__middleLine {
+		width: 100%;
+		height: 280px;
+		margin: 0px 0 5px 0;
+	}
+	.field__box {
+		display: inline-block;
+		width: 280px;
+		height: 280px;
+		background-color: #158e25;
+	}
+	.field__box_left {
+		margin: 0 200px 0 0;
+	}
+	.field__gameBar {
+		display: inline-block;
+		position: relative;
+		width: 150px;
+		height: 50px;
+		margin: 113px 51px;
+		border: 2px solid red;
+		background-color: black;
+	}
+	#score {
+		position: absolute;
+		right: 10px;
+		color: white;
+		font: 2.7em bold ;
+	}
+	#firstHealth {
+		position: absolute;
+		font-size: 2em;
+		right: 5px;
+	}
+	#secondHealth {
+		position: absolute;
+		font-size: 2em;
+		right: 52.5px;
+	}
+	#thirdHealth {
+		position: absolute;
+		font-size: 2em;
+		right: 105px;
+	}
+	.active {
+		color: red;
+	}
+
+
+
+
+
+
+
+
+}
