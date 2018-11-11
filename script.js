@@ -7,8 +7,6 @@ let random;
 let chekClicked;
 let boxId;
 let healthId;
-let hardness = 0;
-
 let emoji = document.createElement('span');
 emoji.innerHTML = '🐭';
 emoji.classList.add('emoji');
@@ -19,11 +17,9 @@ failEmoji.classList.add('failEmoji');
 class PlaySource {
 	catched () {
 		PlayInfo.score += 10;
-		score.innerHTML = PlayInfo.score;
 		emoji.onclick = function() {};
 		chekClicked = true;
 		console.log('поймал мышь');
-		hardness += 1;
 		}
 	failed () {
 		healthId = document.getElementById('health' + PlayInfo.health);
@@ -50,23 +46,16 @@ class PlaySource {
 		}
 	}
 }
-
-let multiplier = 1;
 function startPlay () {
 	if (PlayInfo.health > 0) {
 		startButton.onclick = function() {};
 		chekClicked = 0;
 		newGame.emojiGen ();
-		if (hardness === 5) {
-			hardness = 0;
-			multiplier += 1; 
-		}
 		setTimeout(function() {
-
 			(random > 0.5) ?
 			boxId.removeChild(emoji) : boxId.removeChild(failEmoji);
 			return startPlay ();	
-		}, 3000/multiplier);
+		}, 3000);
 	}
 	else {alert(PlayInfo.score)};
 }
@@ -74,14 +63,5 @@ let newGame = new PlaySource();
 let startButton = document.getElementById('start');
 startButton.onclick = function() {
 	startPlay ();
-}
-let rulesButton = document.getElementById('rules');
-
-rulesButton.onclick = function() {
-	let infoBar = document.getElementById('info');
-	infoBar.classList.remove('header__hidden');
-	setTimeout(function() {
-		infoBar.classList.add('header__hidden')},
-		3000);
 }
 
