@@ -6,47 +6,56 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header class = 'header'>
-		<div class = 'header__rules' id = 'rules'>
-			Правила
-			<div class = 'header__hidden header__visible' id = 'info'>
-				Я бы не доверял свиньям
-			</div>
-		</div>
-		<div class = 'header__start' id = 'start'>
-			СТАРТ
-		</div>
-	</header>
 	<article class = 'field'>
 		<section class = 'field__outsideLine'>
-			<div class = 'field__box field__box_left' id = 'box1'>
+			<div class = 'field__box' id = 'box1'>
 			</div>
+			<section class = 'button'>
+				<div class = 'button__start' id = 'start'>
+					СТАРТ
+				</div>
+			</section>
 			<div class = 'field__box' id = 'box2'>
 			</div>
 		</section>
 		<section class = 'field__middleLine'>
 			<div class = 'field__gameBar'>
-					<span id ='score'>
-						000
-					</span>	
+				<span id ='score'>
+					000
+				</span>	
 			</div>
 			<div class = 'field__box' id = 'box3'>
 			</div>
 			<div class = 'field__gameBar'>
-					<span id = 'health1'>
-						❤️
-					</span>
-					<span id = 'health2'>
-						❤️
-					</span>
-					<span id = 'health3'>
-						❤️
-					</span>
+				<span id = 'health1'>
+					❤️
+				</span>
+				<span id = 'health2'>
+					❤️
+				</span>
+				<span id = 'health3'>
+					❤️
+				</span>
 			</div>
 		</section>
 		<section class = 'field__outsideLine'>
-			<div class = 'field__box field__box_left' id = 'box4'>	
+			<div class = 'field__box' id = 'box4'>	
 			</div>
+			<section class = 'button'>
+				<div class = 'button__rules' id = 'rules'>
+					?
+				</div>
+				<div class = 'button__hidden button__visible' id = 'info'>
+						<ul>
+						<li>Нажимай на "СТАРТ" - в одной из 5 нор появится зверек</li>
+						<li>Цель: успеть щелкнуть по мыши ...да,мышью</li>
+						<li>Такие эмодзи 🐷,🐵,🐱,🐼,🦊 следует игнорировать</li>
+						<li>В случае ошибки, или опоздания сгорает 1 HP</li>
+						<li>Если же успеть, счет увеличится на 10</li>
+						<li>При достижении счета кратного 50, скорость игры возрастает</li>
+						<ul>
+					</div>
+			</section>
 			<div class = 'field__box' id = 'box5'>
 			</div>
 		</section>

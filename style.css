@@ -12,53 +12,54 @@ body {
 	font-size: 7em;
 	cursor: pointer;
 }
-.header__hidden {
+.button {
+	width: 200px;
+	height: 200px;
+	display: block;
+	position: relative;
+}
+.button__hidden {
 	display: none;
 }
-.header__visible {
-	background-color: #014ead;
+.button__visible {
+	background-color: #e2e4e2;
 	position: absolute;
-	text-align: center;
-	line-height: 60px;
-	font-size: .75em;
-	font: bold sans-serif;
-	left: -110px;
-	width: 280px;
-	height: 60px;
+	font-size: 1.1em;
+	font: sans-serif;
+	left: -170px;
+	bottom: 0px;
+	width: 540px;
+	height: 200px;
 	border-radius: 20px 20px;
 }
-.header {
+.button__rules {
 	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	margin: 0 auto;
-	width: 800px;
-	height: 80px;
-}
-.header__rules {
-	display: inline-flex;
-	position: relative;
+	
 	align-items: center;
 	justify-content: center;
-	width: 150px;
+	width: 50px;
 	height: 50px;
 	background-color: #014ead;
-	border-radius: 20px 50px;
-	font-size: 1.7em;
+	border-radius: 50%;
 	font-family: sans-serif;
 	cursor: pointer;
+	margin: 60px auto;
+	font-size: 2em;
+	color: #041e25;
+	border: 2px solid #90aeb6;	
 }
-.header__start {
-	display: inline-flex;
+.button__start {
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 150px;
-	height: 50px;
+	height: 40px;
 	background-color: #982701;
-	border-radius: 50px 20px;
+	border-radius: 30px;
 	font-size: 1.7em;
 	font-family: sans-serif;
 	cursor: pointer;
+	margin: 60px 25px;
 }
 .field {
 	margin: 0 auto;
@@ -84,9 +85,6 @@ body {
 	height: 200px;
 	background-color: #158e25;
 }
-.field__box_left {
-	margin: 0 200px 0 0;
-	}
 .field__gameBar {
 	display: inline-block;
 	position: relative;
