@@ -16,13 +16,13 @@ emoji.classList.add('emoji');
 let failEmoji = document.createElement('span');
 failEmoji.classList.add('failEmoji');
 
+let animated = document.getElementById('star');
+
 let timerOther;
 let timerMouse;
-let infoBar;
 
 function createFailImg () {
 	var failEmojiImg = (Math.floor(Math.random() * 5) + 1);
-	console.log(failEmojiImg);
 	switch (failEmojiImg) {
 		case 1:	
 			failEmoji.innerHTML ='🐷';
@@ -42,16 +42,30 @@ function createFailImg () {
 	}
 }
 function startPlay () {
-	if (hardness === 5) {
-		hardness = 0;
-		multiplier += 1; 
-	}
 	if (PlayInfo.health > 0) {
 		emojiGen ();
+	}
+	upHardness ();
+}
+function upHardness () {
+		if (hardness === 5) {
+		hardness = 0;
+		multiplier += 1; 
+		animated.innerHTML = multiplier;
+		animated.classList.add('stats__starBar_animation');
+		animated.addEventListener("animationend", listener, false);
+		animated.addEventListener("animationstart", listener, false);
+		function listener(animated) {
+			let anim = document.getElementById('star');
+			if (animated.type === "animationend") {
+				anim.classList.remove('stats__starBar_animation');
+			}
+		}
 	}
 }
 function failed () {
 	healthId = document.getElementById('health' + PlayInfo.health);
+	healthId.classList.remove('alive');
 	healthId.classList.add('fired');
 	PlayInfo.health -= 1;
 	failEmoji.onclick = function() {};
@@ -69,12 +83,12 @@ function catched () {
 function emojiGen () {
 	boxId = document.getElementById('box' + (Math.floor(Math.random() * 5) + 1));
 	random = Math.random();
-	if (random < 0.5) {
-		timerOther = setTimeout(endRound,3000/multiplier);}
+	if (random < 0.4) {
+		timerOther = setTimeout(endRound,2000/(Math.pow(multiplier,0.5)));}
 	else {
-		timerMouse = setTimeout(failed,3000/multiplier);};
+		timerMouse = setTimeout(failed,2000/(Math.pow(multiplier,0.5)));};
 	
-	if (random > 0.5) {
+	if (random > 0.4) {
 		boxId.appendChild(emoji);
 		emoji.onclick = function() {
 		clearTimeout (timerMouse);
@@ -91,21 +105,23 @@ function emojiGen () {
 	}
 }
 function endRound () {
-	(random > 0.5) ?
+	(random > 0.4) ?
 	boxId.removeChild(emoji) : boxId.removeChild(failEmoji);
 	startPlay ();
 }
+let infoBar = document.getElementById('info');
 let rulesButton = document.getElementById('rules');
 rulesButton.onclick = function() {
-	infoBar = document.getElementById('info');
-	infoBar.classList.remove('button__hidden');
+	infoBar.classList.remove('info__hidden');
 	setTimeout(function() {
-		infoBar.classList.add('button__hidden')},
+		infoBar.classList.add('info__hidden')},
 		6000);
 }
+let okButton = document.getElementById('mainBar_ok');
+okButton.onclick = function() {
+	infoBar.classList.add('info__hidden');
+}	
 let startButton = document.getElementById('start');
 startButton.onclick = function() {
-	if (infoBar) {
-	infoBar.classList.add('button__hidden');}
 	startPlay ();
 }
