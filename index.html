@@ -4,45 +4,70 @@
 	<meta charset="utf-8">
 	<title>Indi junk</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="fontStyle.css">
 </head>
 <body>
-	<header>
-		
+	<header class = 'header'>
+		<article class = 'header__stats'>
+			<section class = 'stats__starBar'>
+				<div class = 'stats__starBar_star' id = 'star'>
+						1
+				</div>
+			</section>
+			<section class = 'stats__scoreBar'>
+				<div class = 'stats__scoreBar_item'>
+					<span class = 'stats__scoreBar_score' id = 'score'>000</span>
+				</div>
+			</section>
+			<section class = 'stats__healthBar'>
+				<span id = 'health1' class = 'alive'>
+				</span>
+				<span id = 'health2' class = 'alive'>
+				</span>
+				<span id = 'health3' class = 'alive'>
+				</span>
+			</section>
+		</article>
+		<article class = 'info__hidden info__visible' id = 'info'>
+			<section class = 'info__mainBar'>
+				<span class = 'info__mainBar_text' id = 'mainBar_text'>
+					<p>1.   В одной из 5-ти норок в случайном порядке периодически появляется мышь 🐭и другие emoji 🐼🐻🦊🐱...</p>
+					<p>2.   Нужно поймать мышь. При клике по мыши игроку добавляется +10 очков. </p>
+					<p>3.   После каждой пятой пойманной мыши скорость её случайного появления увеличивается.</p>
+					<p>4.   Если клик был выполнен по другому emoji, то у игрока отнимается жизнь. Всего 3 жизни. Если жизни закончились, то игра останавливается.</p>
+				</span>
+				<div class = 'info__mainBar_barName' id = 'mainBar_barName'>
+					ПРАВИЛА ИГРЫ
+				</div>
+				<div class = 'info__mainBar_ok' id = 'mainBar_ok'>
+					OK
+				</div>
+			</section>
+		</article>
+		<article class = 'header__button'>
+			<section class= 'buttons__start' id = 'start'>
+				НАЧАТЬ
+			</section>
+			<section class= 'button__rules' id = 'rules'>
+				?
+			</section>			
+		</article>
 	</header>
 	<article class = 'field'>
-		<section class = 'field__outsideLine'>
-			<div class = 'field__box field__box_left'>
+		<section class = 'field__topLine'>
+			<div class = 'field__box' id = 'box1'>
 			</div>
-			<div class = 'field__box'>
+			<div class = 'field__box field__box_alien' id = 'box2'>
 			</div>
-		</section>
-		<section class = 'field__middleLine'>
-			<div class = 'field__gameBar'>
-					<span id ='score'>
-						000
-					</span>	
-			</div>
-			<div class = 'field__box'>
-			</div>
-			<div class = 'field__gameBar'>
-					<span id = 'firstHealth' class = 'active'>
-						❤️
-					</span>
-					<span id = 'secondHealth' class = 'active'>
-						❤️
-					</span>
-					<span id = 'thirdHealth' class = 'active'>
-						❤️
-					</span>
+			<div class = 'field__box' id = 'box3'>
 			</div>
 		</section>
-		<section class = 'field__outsideLine'>
-			<div class = 'field__box field__box_left'>	
+		<section class = 'field__bottomLine'>
+			<div class = 'field__box' id = 'box4'>	
 			</div>
-			<div class = 'field__box'>
+			<div class = 'field__box' id = 'box5'>
 			</div>
-		</section>
 	</article>
-
-
-</body
+	<script type="text/javascript" src="script.js">	
+	</script>
+</body>

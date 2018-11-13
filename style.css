@@ -1,76 +1,298 @@
 body {
-	background-color: #31313a; 
+	background-image: url(images/grass.png); 
+}
+.header {
+	margin: 44px 60px 120px 70px;
+	display: flex;
+	justify-content: space-between;
+}
+.header__stats {
+	width: 293px;
+	height: 136px;
+	position: relative;
+}
+.stats__starBar {
+	display: block;
+	position: absolute;
+	left: 0px;
+	width: 136px;
+	height: 136px;
+	z-index: 3;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	box-shadow: -1px 1px 5px -1.5px black;
+}
+.stats__starBar_star {
+	display: inline-block;
+	position: absolute;
+	left: 33px;
+	top: 33px;
+	width: 71px;
+    height: 69px;
+	background-image: url(images/star.svg);
+	text-align: center;
+	line-height: 69px;
+	font-size: 24px;
+	font-family: MontserratBold;
+	color: #FFFFFF;
+}
+@keyframes jump {
+	0% {
+		top: 33px;
+	}
+	50% {
+		top:10px;
+	}
+	100% {
+		top: 33px;
+	}
+}
+@keyframes roll {
+	0% {
+		transform: scaleX(1);
+	}
+	20% {
+		transform: scaleX(1);
+	}
+	40% {
+		transform: scaleX(-1);
+	}
+	60% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+.stats__starBar_animation {
+	animation: roll 2s, jump 2s;
+}
+.stats__scoreBar {
+	position: absolute;
+	right: 0px;
+	top: 17px;
+	width: 232px;
+	height: 70px;
+	border-radius: 30px;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 5px -1.5px black;
+		z-index: 2;
+}
+.stats__scoreBar_item {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 207px;
+	height: 50px;
+	background-color: #A0B4BE;
+	border-radius: 20px;
+	box-shadow: inset 0 0 5px -1.5px black; 
+	z-index: 2;
+}
+.stats__scoreBar_score {
+	position: absolute;
+	right: 50px;
+	top: 3px;
+	color: #FFFFFF;
+	font-family: MontserratBold;
+	font-size: 35px;
+}
+.stats__healthBar {
+	position: absolute;
+	right: 51px;
+	bottom: 9px;
+	width: 193px;
+	height: 46px;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 5px -1.5px black;
+	z-index: 1;
+}
+#health1 {
+	position: absolute;
+	right: 19px;
+	top: 16px;
+}
+#health2 {
+	position: absolute;
+	right: 46px;
+	top: 16px;
+}
+#health3 {
+	position: absolute;
+	right: 74px;
+	top: 16px;
+}
+.header__button {
+	width: 310px;
+	height: 70px;
+	display: flex;
+}
+.buttons__start {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 204px;
+	height: 54px;
+	border-radius: 50px;
+	background-color: #FFFFFF;
+	font-family: MontserratExtraBold;
+	font-size: 20px;
+	color: #27A8F3;
+	box-shadow: 0 1px 10px -1.5px black;
+	border: 8px solid #FFFFFF;
+	cursor: pointer;
+}
+.buttons__start:hover {
+	background-color: #27A8F3;
+	color: #FFFFFF;
+}
+.button__rules {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	font-family: MontserratExtraBold;
+	font-size: 30px;
+	color: #27A8F3;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 10px -1.5px black;
+	margin-left: 20px;
+	border: 8px solid #FFFFFF;
+	cursor: pointer;
+}
+.button__rules:hover {
+	background-color: #27A8F3;
+	color: #FFFFFF;
+}
+.field {
+	width: 895px;
+	height: 430px;
+	margin: 0 auto;
+	display: block;
+}
+.field__topLine {
+	width: 100%;
+	height: 217px;
+	display: flex;
+	justify-content: space-between;
+}
+.field__bottomLine {
+	width: 560px;
+	margin: 46px auto;
+	display: flex;
+	justify-content: space-between;
+}
+.field__box {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 225px;
+	height: 167px;
+	border-radius: 50%;
+	background-color: #AE8348;
+
+}
+.field__box_alien {
+	margin: 50px 0 0 0;
+}
+.info__hidden {
+	display: none;
+}
+.info__visible {
+	position: relative;
+}
+.info__mainBar {
+	position: absolute;
+	top: 160px;
+	left: -410px;
+	border: 25px solid #FFFFFF;
+	border-radius: 30px;
+	background-color: #27A8F3;
+	width: 770px;
+	height: 453px;
+}
+.info__mainBar_text {
+	display: block;
+	margin: 93px 38px 86px;
+	font-size: 20px;
+	color: #FFFFFF; 
+	font-family: MontserratExtraBold;
+}
+.info__mainBar_barName {
+	position: absolute;
+	top: -60px;
+	left: 126.5px;
+	width: 517px;
+	height: 96px;
+	border-radius: 50px;
+	background-color: #FFFFFF; 
+	color: #27A8F3;
+	font-size: 35px;
+	font-family: MontserratExtraBold;
+	text-align: center;
+	line-height: 96px;
+}
+.info__mainBar_ok {
+	position: absolute;
+	bottom: -50px;
+	left: 260px;
+	width: 240px;
+	height: 60px;
+	border-radius: 50px;
+	border: 8px solid  #FFFFFF;
+	background-color: #FFE500;
+	color: #FFFFFF;
+	font-size: 35px;
+	font-family: MontserratExtraBold;
+	text-align: center;
+	line-height: 60px
+	cursor: pointer;
+}
+.info__mainBar_ok:hover {
+	background-color:#FFC700;
+}
+.alive {
+	width: 22px;
+	height: 20px;
+	background-image: url(images/heart-alive.svg);
+}
+.fired {
+	width: 22px;
+	height: 20px;
+	background-image: url(images/heart-fired.svg);
+}
+@keyframes up {
+	0% {
+		transform: scale(.7);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes opacitylity {
+	0% {
+		opacity: .1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.failEmoji{
+	font-size: 8em;
+	margin: 0 0 40px 0;
+	cursor: pointer;
+	animation: up .15s, opacitylity .8s;
+}
+.emoji {
+	font-size: 8em;
+	margin: 0 0 40px 0;
+	cursor: pointer;
+	animation: up .15s, opacitylity .8s;
 }
 
-@media (min-width: 1024px) {
-	.header {
-		width:100%;
-		
-	}
-	.field {
-		margin: 100px auto;
-		width: 800px;
-		height: 800px;
-	}
-	.field__outsideLine {
-		display: inline-flex;
-		width: 760px;
-		height: 280px;
-		margin: 0 20px 0 20px;
-	}
-	.field__middleLine {
-		width: 100%;
-		height: 280px;
-		margin: 0px 0 5px 0;
-	}
-	.field__box {
-		display: inline-block;
-		width: 280px;
-		height: 280px;
-		background-color: #158e25;
-	}
-	.field__box_left {
-		margin: 0 200px 0 0;
-	}
-	.field__gameBar {
-		display: inline-block;
-		position: relative;
-		width: 150px;
-		height: 50px;
-		margin: 113px 51px;
-		border: 2px solid red;
-		background-color: black;
-	}
-	#score {
-		position: absolute;
-		right: 10px;
-		color: white;
-		font: 2.7em bold ;
-	}
-	#firstHealth {
-		position: absolute;
-		font-size: 2em;
-		right: 5px;
-	}
-	#secondHealth {
-		position: absolute;
-		font-size: 2em;
-		right: 52.5px;
-	}
-	#thirdHealth {
-		position: absolute;
-		font-size: 2em;
-		right: 105px;
-	}
-	.active {
-		color: red;
-	}
 
 
 
-
-
-
-
-
-}
