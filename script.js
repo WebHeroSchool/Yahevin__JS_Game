@@ -45,6 +45,9 @@ function startPlay () {
 	if (PlayInfo.health > 0) {
 		emojiGen ();
 	}
+	else {
+		endGame ();
+	}
 	upHardness ();
 }
 function upHardness () {
@@ -109,6 +112,35 @@ function endRound () {
 	boxId.removeChild(emoji) : boxId.removeChild(failEmoji);
 	startPlay ();
 }
+
+let endBar__scoreId = document.getElementById('endBar__scoreId');
+let endBar = document.getElementById('endBar');
+
+function endGame () {
+	endBar__scoreId.innerHTML = PlayInfo.score;
+	endBar.classList.remove('info__hidden');
+	startButton.onclick = function() {
+		startPlay ();
+		startButton.onclick = function() {};
+	}
+	PlayInfo.score = 0;
+	score.innerHTML = '000';
+	PlayInfo.health = 3;
+	animated.innerHTML = '1';
+	multiplier = 1;
+	hardness = 0;
+	for (i=1; i<4; ++i) {
+		healthId = document.getElementById('health' + i);
+		healthId.classList.remove('fired');
+		healthId.classList.add('alive');
+	}	
+}	
+
+let startButton = document.getElementById('start');
+startButton.onclick = function() {
+	startPlay ();
+	startButton.onclick = function() {};
+}
 let infoBar = document.getElementById('info');
 let rulesButton = document.getElementById('rules');
 rulesButton.onclick = function() {
@@ -121,7 +153,6 @@ let okButton = document.getElementById('mainBar_ok');
 okButton.onclick = function() {
 	infoBar.classList.add('info__hidden');
 }	
-let startButton = document.getElementById('start');
-startButton.onclick = function() {
-	startPlay ();
-}
+let endBarOkButton = document.getElementById('endBar_ok')
+endBarOkButton.onclick = function() {
+	endBar.classList.add('info__hidden');}

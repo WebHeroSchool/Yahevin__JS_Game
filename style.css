@@ -248,12 +248,37 @@ body {
 	font-size: 35px;
 	font-family: MontserratExtraBold;
 	text-align: center;
-	line-height: 60px
+	line-height: 60px;
 	cursor: pointer;
 }
 .info__mainBar_ok:hover {
 	background-color:#FFC700;
 }
+.endBar__congrads {
+	display: block;
+	font-size: 29px;
+	font-family: MontserratExtraBold;
+	text-align: center;
+	margin: 50px auto 0 auto;
+	color: #FFFFFF;
+}
+.endBar__score {
+	display: block;
+	font-size: 160px;
+	font-family: MontserratExtraBold;
+	text-align: center;
+	margin: 0 auto;
+	color: #FFFFFF;
+}
+.endBar__scoreText {
+	display: block;
+	font-size: 70px;
+	font-family: MontserratExtraBold;
+	text-align: center;
+	margin: 0 auto;
+	color: #FFFFFF;
+}
+
 .alive {
 	width: 22px;
 	height: 20px;
